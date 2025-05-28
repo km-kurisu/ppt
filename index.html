@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>10-Day Web Dev Plan Presentation</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    margin: 0;
+    overflow: hidden;
+    color: #fff;
+  }
+  .presentation {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #1e1e2f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.8s ease;
+    overflow: hidden;
+  }
+  .slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 10;
+  }
+  h1, h2, h3 {
+    margin: 0.5rem 0;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0,0,0,0.4);
+  }
+  h1 {
+    font-size: 3rem;
+    color: #fff;
+  }
+  h2 {
+    font-size: 2rem;
+    color: #f0a500;
+  }
+  h3 {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+    max-width: 640px;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+  ul li {
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    position: relative;
+    padding-left: 1.4em;
+  }
+  ul li::before {
+    content: "●";
+    position: absolute;
+    left: 0;
+    color: #f0a500;
+    font-weight: bold;
+  }
+  .image-container {
+    margin-top: 1.5rem;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.6);
+    max-width: 640px;
+    width: 90vw;
+    max-height: 360px;
+    position: relative;
+    margin-bottom: 2.5rem; /* Add space for the button below */
+  }
+  .image-container img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+  .navigation {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #f0a500;
+    font-weight: bold;
+    font-size: 1rem;
+    user-select: none;
+  }
+  .nav-button {
+    border: 2px solid #f0a500;
+    background: transparent;
+    color: #f0a500;
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+  }
+  .nav-button:hover {
+    background: #f0a500;
+    color: #1e1e2f;
+  }
+  /* Animations */
+  .slide-content {
+    animation: fadeSlideUp 1s ease forwards;
+  }
+  @keyframes fadeSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  footer {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 0.9rem;
+    color: #bbb;
+    font-style: italic;
+  }
+  .slide-links {
+    margin-top: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+    position: static;
+    height: auto;
+  }
+  .slide-links .nav-button {
+    position: static;
+    margin: 0;
+    z-index: 2;
+    white-space: nowrap;
+  }
+  .slide-content {
+    position: relative;
+  }
+  .image-container {
+    margin-top: 1.5rem;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.6);
+    max-width: 640px;
+    width: 90vw;
+    max-height: 360px;
+    position: relative;
+    margin-bottom: 2.5rem; /* Add space for the button below */
+  }
+</style>
+</head>
+<body>
+
+<div class="presentation">
+
+  <!-- Slide 1: Title -->
+  <section class="slide active">
+    <div class="slide-content">
+      <h1>10-Day Web Development Plan</h1>
+      <h2>From Personal Website to Shopping App with Next.js</h2>
+      <div class="image-container">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Web development workspace" />
+      </div>
+      <p style="margin-top: 1.2rem; font-size: 1.1rem;">Plan and build your own websites and convert them into a modern app</p>
+    </div>
+  </section>
+
+  <!-- Slide 2: Introduction -->
+  <section class="slide">
+    <div class="slide-content">
+      <h2>Introduction</h2>
+      <ul>
+        <li>Learn how to build a Personal Website</li>
+        <li>Create a full-featured Shopping Website</li>
+        <li>Convert websites into a modern app using Next.js</li>
+        <li>Follow a structured 10-day step-by-step plan</li>
+      </ul>
+      <div class="image-container">
+        <img src="/public/g1.jpg" alt="Planning on whiteboard" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 3: Day 1 - Plan Personal Website -->
+  <section class="slide">
+    <div class="slide-content">
+      <h2>Days 1-2: Personal Website - Planning & Design</h2>
+      <ul>
+        <li>Gather requirements and content (about you, portfolio)</li>
+        <li>Sketch wireframes and layout design</li>
+        <li>Choose color scheme and fonts</li>
+        <li>Decide on site structure (home, about, contact)</li>
+      </ul>
+      <div class="image-container">
+        <img src="/public/image1.png" alt="Design sketches on paper" />
+      </div>
+      <div class="slide-links">
+        <a href="https://vinod-choudhary.github.io/-/" target="_blank" class="nav-button">View Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 4: Day 3 - Develop Personal Website structure -->
+  <section class="slide">
+    <div class="slide-content">
+      <h2>Day 3: Personal Website - Development Setup</h2>
+      <ul>
+        <li>Setup project folder and development tools</li>
+        <li>Create HTML structure and navigation</li>
+        <li>Add CSS styles based on chosen design</li>
+        <li>Make responsive for mobile devices</li>
+      </ul>
+      <div class="image-container">
+        <img src="/public/image.png" alt="Coding on laptop" />
+      </div>
+      <div class="slide-links">
+        <a href="https://code.visualstudio.com/" target="_blank" class="nav-button">View Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 5: Day 4 - Add content and polish personal website -->
+  <section class="slide">
+    <div class="slide-content">
+      <h2>Day 4: Personal Website - Finalize and Polish</h2>
+      <ul>
+        <li>Add text content and images (portfolio, bio)</li>
+        <li>Add contact form and social links</li>
+        <li>Polish styling and add subtle animations</li>
+        <li>Test on multiple browsers and devices</li>
+      </ul>
+      <div class="image-container">
+        <img src="/public/devportneelhtml.jpeg" alt="Polished desktop display" />
+      </div>
+      <div class="slide-links">
+        <a href="https://neelpawaskar-portfolio.netlify.app/" target="_blank" class="nav-button">View Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 6: Day 5-6 - Plan Shopping Website -->
+  <section class="slide">
+    <div class="slide-content">
+      <h2>Days 5-6: Shopping Website - Planning & Design</h2>
+      <ul>
+        <li>Define product categories and user flow</li>
+        <li>Design homepage, product pages, cart, and checkout</li>
+        <li>Focus on user-friendly navigation and search</li>
+        <li>Draft wireframes and choose e-commerce colors</li>
+      </ul>
+      <div class="image-container">
+        <img src="/public/swagatport.jpeg" alt="Ecommerce design sketches" />
+      </div>
+      <div class="slide-links">
+        <a href="https://swagatbhoir.github.io/cricket/" target="_blank" class="nav-button">View Website</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 7: Day 7: Develop Shopping Website structure -->
+  <section class="slide">
+    <div class="slide-content">
+      <h2>Day 7: Shopping Website - Development Setup</h2>
+      <ul>
+        <li>Setup project with folders and dependencies</li>
+        <li>Create product listing pages and detail views</li>
+        <li>Add shopping cart functionality (basic)</li>
+        <li>Style page components for clarity and engagement</li>
+      </ul>
+      <div class="image-container">
+        <img src="/public/htmlwebsitefinal.png" alt="Shopping online interface" />
+      </div>
+      <div class="slide-links">
+        <a href="https://km-kurisu.github.io/Bibliotheca/" target="_blank" class="nav-button">View Website</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 8: Day 8: Finalize Shopping Website -->
+  <section class="slide">
+    <div class="slide-content">
+      <h2>Day 8: Shopping Website - Final Touches</h2>
+      <ul>
+        <li>Add checkout & contact forms</li>
+        <li>Implement search, filters, and sorting</li>
+        <li>Test user experience and fix issues</li>
+        <li>Add subtle animations for buttons and images</li>
+      </ul>
+      <div class="image-container">
+        <img src="/public/devwebsiteneelhtml.jpeg" alt="Online shopping experience" />
+      </div>
+      <div class="slide-links">
+        <a href="https://km-kurisu.github.io/Bibliotheca/" target="_blank" class="nav-button">View Website</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 9: Day 9: Next.js Setup & Convert Personal Website -->
+  <section class="slide">
+    <div class="slide-content">
+      <h2>Day 9: Convert to App - Next.js Setup & Personal Website</h2>
+      <ul>
+        <li>Install and setup Next.js project</li>
+        <li>Migrate personal website pages into Next.js pages</li>
+        <li>Utilize React components for reusable UI parts</li>
+        <li>Use Next.js routing and optimize performance</li>
+      </ul>
+      <div class="image-container">
+        <img src="/public/nextportfolio.png" alt="Coding Next.js app" />
+      </div>
+      <div class="slide-links">
+        <a href="https://day7-ten.vercel.app/" target="_blank" class="nav-button">View Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 10: Day 10: Convert Shopping Website & Finalize -->
+  <section class="slide">
+    <div class="slide-content">
+      <h2>Day 10: Convert to App - Shopping Website & Finalize</h2>
+      <ul>
+        <li>Migrate shopping website pages to Next.js</li>
+        <li>Implement state management for cart and user data</li>
+        <li>Add Next.js APIs or SSR if required</li>
+        <li>Polish UI, test app, and deploy (Netlify/Vercel)</li>
+      </ul>
+      <div class="image-container">
+        <img src="/public/nextwebsitefinal.png" alt="App development deployment" />
+      </div>
+      <div class="slide-links">
+        <a href="https://bibliothecav2.vercel.app/" target="_blank" class="nav-button">View Website</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 11: Summary -->
+  <section class="slide">
+    <div class="slide-content">
+      <h2>Summary</h2>
+      <ul>
+        <li>10 days of structured web development learning</li>
+        <li>Hands-on experience from static sites to app</li>
+        <li>Use of modern tools and frameworks (React, Next.js)</li>
+        <li>Creative and technical skills combined</li>
+      </ul>
+      <div class="image-container">
+        <img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=800&q=80" alt="Teamwork and success" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 12: Thank You -->
+  <section class="slide">
+    <div class="slide-content">
+      <h1>Thank You!</h1>
+      <h3>Happy Coding & Building Amazing Websites and Apps</h3>
+      <div class="image-container">
+        <img src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=800&q=80" alt="Celebration" />
+      </div>
+      <p style="margin-top: 2rem; font-size: 1rem; color: #ddd; font-style: italic;">"The journey of a thousand miles begins with one step." – Lao Tzu</p>
+    </div>
+  </section>
+
+  <div class="navigation">
+    <button class="nav-button" id="prevBtn">&#8592; Prev</button>
+    <button class="nav-button" id="nextBtn">Next &#8594;</button>
+  </div>
+
+  <footer>Use Left/Right arrow keys or buttons to navigate slides</footer>
+
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) {
+        slide.classList.add('active');
+      }
+    });
+  }
+
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    current = current === 0 ? slides.length - 1 : current - 1;
+    showSlide(current);
+  });
+
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    current = current === slides.length - 1 ? 0 : current + 1;
+    showSlide(current);
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') {
+      current = current === slides.length - 1 ? 0 : current + 1;
+      showSlide(current);
+    }
+    if (e.key === 'ArrowLeft') {
+      current = current === 0 ? slides.length - 1 : current - 1;
+      showSlide(current);
+    }
+  });
+</script>
+
+</body>
+</html>
